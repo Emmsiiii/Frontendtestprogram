@@ -44,6 +44,8 @@ Frontend with PyScript
       background-color: #f2f2f2;
       padding: 20px;
     }
+
+
     </style>
 
 <body>
@@ -51,22 +53,17 @@ Frontend with PyScript
     <form onsubmit="return false">
         <label for="name">Forsøgsperson</label>:</label><br>
         <input type="text" id="name" name="name"><br>
-        <input type="text" id="start-dato" name="dato" value="Start-dato"><br>
+    
+
+        <label for="phone"> Indtast forsøgspersons telefon nr:</label>
+        <input type ="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"">
+        
+
+        <p> Indtast tid for sms</p>
+        <input type="time" id="start-dato" name="dato"><br>
 
         <input pys-onClick="sub" type="submit" id="btn-form" value="Send">
 
-
     </form> 
- 
-    <p>Output:</p>
-    <p id = 'output'></p>
-    <py-script>
-
-        def sub(*args,**kwargs):
-            result_place = Element('output')
-            result_place.write(f"{Element('name').value} is a good human from {Element('countries').value}")
-    
-    </py-script>
-
 </body>
 </html>
